@@ -8,7 +8,7 @@ on:
 
 jobs:
   # Run Python tests on Github runner
-  tox_test:
+  run_tox_test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,6 +19,10 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+
+    - name: List files
+      run: |
+        ls -lah
 
     - name: Install dependencies
       run: |
@@ -33,7 +37,7 @@ jobs:
       run: tox
 
   # Build Docker image
-  build_docker:
+  build_docker_images:
     runs-on: ubuntu-latest
 
     steps:
