@@ -23,7 +23,7 @@ workflow HelloWorkflow {
     call Utils.Sum { input: ints = [1, 2, 3] }
 
     output {
-        String message = Hello.text
+        String message = Print.text
         Int sum = Sum.sum
     }
 }
