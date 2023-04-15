@@ -17,7 +17,7 @@ workflow HelloWorkflow {
     }
 
     # Run a task locally defined in this repo
-    call Hello { input: message = greeting }
+    call Hello.Print { input: message = greeting }
 
     # Run a task remotely defined in the long-read-pipelines repo
     call Utils.Sum { input: ints = [1, 2, 3] }

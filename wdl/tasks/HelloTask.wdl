@@ -1,6 +1,6 @@
 version 1.0
 
-task HelloTask {
+task EchoMessage {
     input {
         String message
     }
