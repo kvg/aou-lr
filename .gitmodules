@@ -1,4 +1,0 @@
-[submodule "long-read-pipelines"]
-	path = long-read-pipelines
-	url = git@github.com:broadinstitute/long-read-pipelines.git
-	branch = 3.0.72
