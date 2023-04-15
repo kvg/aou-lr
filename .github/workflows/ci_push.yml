@@ -20,9 +20,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: List files
-      run: |
-        ls -lah
+    - name: Checkout github repo (+ download lfs dependencies)
+      uses: actions/checkout@v2
 
     - name: Install dependencies
       run: |
