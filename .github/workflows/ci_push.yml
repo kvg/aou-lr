@@ -4,7 +4,7 @@ name: CI
 on:
   push:
     branches-ignore:
-    - main
+    - main2
 
 jobs:
   # Run Python tests on Github runner
