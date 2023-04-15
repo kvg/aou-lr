@@ -20,7 +20,7 @@ workflow HelloWorkflow {
     call Hello { input: message = greeting }
 
     # Run a task remotely defined in the long-read-pipelines repo
-    call Utils.Sum { input: [1, 2, 3] }
+    call Utils.Sum { input: ints = [1, 2, 3] }
 
     output {
         String message = Hello.message
