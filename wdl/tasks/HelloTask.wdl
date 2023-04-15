@@ -6,14 +6,11 @@ task HelloTask {
     }
 
     command <<<
-        set -euxo pipefail
-
-        python -c "print(~{sep="+" ints})" > ~{prefix}.txt
+        echo ~{message}
     >>>
 
     output {
-        Int sum = read_int("~{prefix}.txt")
-        File sum_file = "~{prefix}.txt"
+        String text = read_string(stdout())
     }
 
     runtime {
