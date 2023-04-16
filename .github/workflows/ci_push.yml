@@ -42,9 +42,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Work around permissions issue
-      run: git config --global --add safe.directory /__w/longbow/longbow
-    - uses: 'actions/checkout@v2'
+    - name: Checkout github repo
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
 
     - id: 'auth'
       name: 'Authenticate to Google Cloud'
@@ -52,10 +53,7 @@ jobs:
       with:
         credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
 
-    - name: Image
+    - name: Build Docker image
       run: |-
-        TAG=$(git rev-parse --abbrev-ref HEAD)
-        cd docker
-        docker build --build-arg branch=$TAG -t us.gcr.io/broad-dsp-lrma/lr-longbow:$TAG .
-        gcloud auth configure-docker -q
-        docker push -q us.gcr.io/broad-dsp-lrma/lr-longbow:$TAG
+        ./scripts/build_docker_images.sh
+
