@@ -9,7 +9,7 @@ do
 
     TAG="us.gcr.io/broad-dsp-lrma/$DOCKER_NAME:$BRANCH_NAME"
 
-    docker build -t $TAG -f $DOCKER_FILE
+    docker build -t $TAG $DIR_NAME
     gcloud auth configure-docker -q
     docker push $TAG
 done
