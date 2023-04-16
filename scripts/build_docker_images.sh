@@ -7,7 +7,7 @@ do
     DIR_NAME=$(dirname $DOCKER_FILE)
     DOCKER_NAME=$(basename $DIR_NAME)
 
-    TAG="us.gcr.io/broad-dsp-lrma/$DOCKER_NAME:$BRANCH_NAME"
+    TAG="us-central1-docker.pkg.dev/broad-dsp-lrma/$DOCKER_NAME:$BRANCH_NAME"
 
     docker build -t $TAG $DIR_NAME
     gcloud auth configure-docker -q
