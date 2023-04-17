@@ -22,7 +22,7 @@ jobs:
 
     - name: Github Bumpversion Action
       id: version-bump
-      uses: jasonamyers/github-bumpversion-action@v1.0.4
+      uses: jasonamyers/github-bumpversion-action@v1.0.5
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DEFAULT_BUMP: "patch"
