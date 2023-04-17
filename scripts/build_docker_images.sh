@@ -5,6 +5,8 @@ set -euxo pipefail
 DOCKER_REPO="aou-lr"
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 
+gcloud config set account aou-lr-docker-builder@broad-dsp-lrma.iam.gserviceaccount.com
+
 for DOCKER_FILE in $(find docker -name Dockerfile)
 do
     DIR_NAME=$(dirname $DOCKER_FILE)
