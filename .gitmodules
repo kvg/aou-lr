@@ -1,3 +1,3 @@
 [submodule "long-read-pipelines"]
 	path = long-read-pipelines
-	url = git@github.com:broadinstitute/long-read-pipelines.git
+	url = https://github.com/broadinstitute/long-read-pipelines.git
