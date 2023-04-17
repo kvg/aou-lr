@@ -5,8 +5,6 @@ set -euxo pipefail
 DOCKER_REPO="aou-lr"
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 
-gcloud config set account aou-lr-docker-builder@broad-dsp-lrma.iam.gserviceaccount.com
-
 for DOCKER_FILE in $(find docker -name Dockerfile)
 do
     DIR_NAME=$(dirname $DOCKER_FILE)
@@ -16,5 +14,6 @@ do
 
     docker build -t $TAG $DIR_NAME && \
         gcloud auth configure-docker -q us-central1-docker.pkg.dev && \
+        gcloud config set account aou-lr-docker-builder@broad-dsp-lrma.iam.gserviceaccount.com && \
         docker push $TAG
 done
