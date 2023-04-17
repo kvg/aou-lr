@@ -53,7 +53,9 @@ jobs:
       with:
         credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
 
-    - name: Build Docker image
+    - name: Build Docker images
       run: |-
+        gcloud config set account aou-lr-docker-builder@broad-dsp-lrma.iam.gserviceaccount.com
+        gcloud auth configure-docker -q us-central1-docker.pkg.dev
         ./scripts/build_docker_images.sh
 
