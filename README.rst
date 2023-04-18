@@ -18,7 +18,7 @@ Quick start
 ::
 
     # Clone repo
-    git clone --recurse-submodules git@github.com:kvg/aou-lr.git
+    git clone https://github.com/kvg/aou-lr.git
 
 
 Getting help
