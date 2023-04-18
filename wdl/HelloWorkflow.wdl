@@ -1,7 +1,7 @@
 version 1.0
 
 import "tasks/HelloTask.wdl" as Hello
-import "lib/wdl/tasks/Utility/Utils.wdl"
+import "lib/Utility/Utils.wdl"
 
 workflow HelloWorkflow {
     meta {
