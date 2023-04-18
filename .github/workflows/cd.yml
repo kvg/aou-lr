@@ -10,6 +10,9 @@ jobs:
   # Release on Github and Docker
   release:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
 
     steps:
     - name: Checkout github repo
