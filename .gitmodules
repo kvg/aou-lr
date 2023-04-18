@@ -1,3 +1,3 @@
-[submodule "long-read-pipelines"]
-	path = long-read-pipelines
+[submodule "wdl/lib"]
+	path = wdl/lib
 	url = https://github.com/broadinstitute/long-read-pipelines.git
