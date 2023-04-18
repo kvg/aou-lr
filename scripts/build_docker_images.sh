@@ -12,5 +12,9 @@ do
 
     TAG="us-central1-docker.pkg.dev/broad-dsp-lrma/$DOCKER_REPO/$DOCKER_NAME:$LABEL"
 
+    if docker manifest inspect $TAG > /dev/null; then
+        docker pull $TAG
+    fi
+
     docker build -t $TAG $DIR_NAME && docker push $TAG
 done
