@@ -1,7 +1,7 @@
 version 1.0
 
 import "tasks/HelloTask.wdl" as Hello
-#import "lib/wdl/tasks/Utility/Utils.wdl"
+import "lib/wdl/tasks/Utility/Utils.wdl"
 
 workflow HelloWorkflow {
     meta {
@@ -20,10 +20,10 @@ workflow HelloWorkflow {
     call Hello.Print { input: message = greeting }
 
     # Run a task remotely defined in the long-read-pipelines repo
-    #call Utils.Sum { input: ints = [1, 2, 3] }
+    call Utils.Sum { input: ints = [1, 2, 3] }
 
     output {
         String message = Print.text
-        #Int sum = Sum.sum
+        Int sum = Sum.sum
     }
 }
